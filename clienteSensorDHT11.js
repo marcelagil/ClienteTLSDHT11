@@ -9,7 +9,6 @@ var maxMediciones=100;
 setInterval(function () {
 sensor.read(11, 4, function(error, temperature, humidity) {
     if (!error) {
-        var seqNo = 0;
         var TLSClient = require('./tls-client.js');
         var c1 = new TLSClient('agent1', 8000);
         c1.on('connect', function (err) {
