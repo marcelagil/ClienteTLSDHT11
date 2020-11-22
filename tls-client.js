@@ -1,4 +1,4 @@
-//
+
 // tls-client.js
 //
 // Example of a Transport Layer Security (or TSL) client
@@ -18,9 +18,8 @@ var tls = require('tls'),
     events = require('events');
 //var sensor = require('./sensor.js');
 // TLS Client object
-let cantidadEnvios=100;
+
 var TLSClient = function (host, port) {
-	var contador=0;
     var options = {
         // Chain of certificate autorities
         // Client and server have these to authenticate keys 
@@ -67,10 +66,8 @@ var TLSClient = function (host, port) {
 
         self.s.on("data", function (data) {
             // Split incoming data into messages around TERM
-			contador=contador+1;
-			if (contador==cantidadEnvios) {
-				
-			}
+
+			
             var info = data.toString().split(self.TERM);
 
             // Add any previous trailing chars to the start of the first message
