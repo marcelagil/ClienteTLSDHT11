@@ -14,13 +14,10 @@ sensor.read(11, 4, function(error, temperature, humidity) {
         var c1 = new TLSClient('agent1', 8000);
         c1.on('connect', function (err) {
             console.log('Cliente conectado-sensor conectado');
-            seqNo += 1;
+            seqNo= seqNo+1;
+			console.log(seqNo);
 				if (seqNo>maxMediciones) {
-					console.log("Medicion 100");
 					process.exit();
-				}
-				else {
-					console.log(seqNo);
 				}
                 var medicion= {
                     "sensor" :{
@@ -64,18 +61,16 @@ sensor.read(11, 4, function(error, temperature, humidity) {
         console.log('STARTED');
     }
     else {      
-        seqNo=+1;
+        
         console.error("sin señall sensor l45",error);
         var TLSClient = require('./tls-client.js');
         var c1 = new TLSClient('agent1', 8000);        
         c1.on('connect', function (err) {
         console.log('Cliente conectado -- sensor desconectado');
+            seqNo= seqNo+1;
+			console.log(seqNo);
 			if (seqNo>maxMediciones) {
-				console.log("Medicion 100");
-				process.exit();
-			}
-			else {
-					console.log(seqNo);
+					process.exit();
 			}
             var medicion= {
                 "sensor" :{
