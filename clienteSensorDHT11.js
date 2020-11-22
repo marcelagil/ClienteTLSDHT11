@@ -16,7 +16,14 @@ sensor.read(11, 4, function(error, temperature, humidity) {
             seqNo += 1;
              //setInterval(function () {
                 var medicion= {
-                    "sensor" : "sensor",
+                    "sensor" :{
+						"id":1,
+						"tipo":"DHT11"
+					},
+					"dispositivo":{
+						"id":1,
+						"tipo":"Raspberry Pi 3B +"
+					},
                     "fecha" : new Date(),
                     "medida": {
                         "temperatura": temperature.toFixed(1),
@@ -62,7 +69,14 @@ sensor.read(11, 4, function(error, temperature, humidity) {
         console.log('Cliente conectado -- sensor desconectado');
         //setInterval(function () {
             var medicion= {
-                "sensor" : "sensor",
+                "sensor" :{
+					"id":1,
+					"tipo":"DHT11"
+				},
+				"dispositivo":{
+					"id":1,
+					"tipo":"Raspberry Pi 3B+"
+				},
                 "fecha" : new Date(),
                 "medida ": {
                     "temperatura": "sin señal",
