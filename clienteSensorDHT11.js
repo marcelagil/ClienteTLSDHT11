@@ -41,7 +41,7 @@ sensor.read(11, 4, function(error, temperature, humidity) {
         });
    
         c1.on('disconnect', function (err) {
-            console.log('Cliente desconectado');
+            console.log('Servidor desconectado');
         });
    
         /*c1.on('message', function (message) {
@@ -93,7 +93,7 @@ sensor.read(11, 4, function(error, temperature, humidity) {
         });
                
         c1.on('disconnect', function (err) {
-            console.log('Cliente desconectado');
+            console.log('Servidor desconectado');
         });              
 
             console.log('STARTED');
