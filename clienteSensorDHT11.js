@@ -5,8 +5,10 @@
 
 var sensor = require('node-dht-sensor');
 var seqNo = 0;
-var maxMediciones=100;
+var tiempoTotal=600000;
 var tiempoEntreMedicion=1000;
+var maxMediciones=tiempoTotal/tiempoEntreMedicion; 
+
 
 setInterval(function () {
 sensor.read(11, 4, function(error, temperature, humidity) {
